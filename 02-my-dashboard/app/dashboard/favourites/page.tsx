@@ -1,5 +1,6 @@
-import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
+import { PokemonFavorites } from "@/pokemons";
 import { cacheTag } from "next/cache";
+import { IoHeartOutline } from "react-icons/io5";
 
 export const metadata = {
     title: 'Pokemons Favourites',
@@ -8,14 +9,15 @@ export const metadata = {
 
 
 export default async function PokemonsPage() {
-    'use cache';
+    // 'use cache';
 
-    cacheTag('pokemons');
+    // cacheTag('pokemons');
 
     return (
         <div className="flex flex-col">
             <span className="text-5xl my-2">Pokemons Favourites <small className="text-blue-500">Global state</small></span>
-            <PokemonGrid pokemons={[]} />
+            <PokemonFavorites />
         </div>
     );
 }
+
